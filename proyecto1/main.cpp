@@ -7,8 +7,8 @@ int main()
     int a;
     int b;
     int z;
-    a = 3;
-    b = 5;
+    cin >> a;
+    cin >> b;
     z = a + b;
     cout << z << endl;
     return 0;
