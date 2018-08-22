@@ -7,3 +7,5 @@ int main()
     cout << "Hello Sebastian!" << endl;
     return 0;
 }
+##git commit -m "cambios"
+##git add .
