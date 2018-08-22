@@ -13,4 +13,6 @@ int main()
     cout << z << endl;
     return 0;
 }
-
+##git commit -m "cambios"
+##git add .
+##git push -u origin master
