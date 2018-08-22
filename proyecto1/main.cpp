@@ -9,3 +9,4 @@ int main()
 }
 ##git commit -m "cambios"
 ##git add .
+##git push -u origin master
