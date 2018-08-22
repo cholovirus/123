@@ -10,7 +10,7 @@ int main()
     cin >> a;
     cin >> b;
     z = a + b;
-    cout << z << endl;
+    cout << "la suma de " <<a<< " y " <<b<< " es igual a " <<z << endl;
     return 0;
 }
 
