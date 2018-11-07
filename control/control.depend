@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1541601479 source:d:\control\control\main.cpp
+	<iostream>
+	"Polygon.h"
+	"Rectangulo.h"
+	"Triangulo.h"
+	"Circulo.h"
+	"PolygonArray.h"
+
+1541600653 d:\control\control\include\polygon.h
+	<iostream>
+
+1541601032 d:\control\control\include\rectangulo.h
+	"Polygon.h"
+
+1541599523 d:\control\control\include\triangulo.h
+	"Polygon.h"
+
+1541599125 d:\control\control\include\circulo.h
+	"Polygon.h"
+
+1541599444 d:\control\control\include\polygonarray.h
+	"Polygon.h"
+	"Rectangulo.h"
+
+1541599130 source:d:\control\control\src\circulo.cpp
+	"Circulo.h"
+
+1541601163 source:d:\control\control\src\polygon.cpp
+	"Polygon.h"
+
+1541599444 source:d:\control\control\src\polygonarray.cpp
+	"PolygonArray.h"
+
+1541601175 source:d:\control\control\src\rectangulo.cpp
+	"Rectangulo.h"
+
+1541599575 source:d:\control\control\src\triangulo.cpp
+	"Triangulo.h"
+
