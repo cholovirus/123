@@ -8,7 +8,7 @@ PolygonArray::PolygonArray()
 
 PolygonArray::PolygonArray(const Polygon pts[],const int size){
     this->size= size;
-    this->polygons= new Polygon[size];
+    this->polygons= new Polygon[size];//es necesario tener el polygon(),si no habria variables
     for(int i=0;i<size;i++){
         polygons[i]=pts[i];
     }
