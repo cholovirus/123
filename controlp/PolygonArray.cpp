@@ -21,6 +21,7 @@ PolygonArray::PolygonArray(PolygonArray &o){
         polygons[i]=o.polygons[i];
     }
 }
+
 void PolygonArray::resize(int newsize){
     Polygon *pts = new Polygon[newsize];
     int minsize = (newsize >size) ?size:newsize;
@@ -29,14 +30,6 @@ void PolygonArray::resize(int newsize){
     delete[] polygons;
     size=newsize;
     polygons=pts;}
-
-void PolygonArray::clear(){
-    resize(0);
-}
-
-int PolygonArray::getSize(){
-    return size;
-}
 
 void PolygonArray::print(){
     for(int i=0;i<size;i++){
@@ -62,6 +55,7 @@ void PolygonArray::swaps(const int val){
     polygons[val]=polygons[size-1];
     polygons[size-1]=temp;
 }
+
 void PolygonArray::remover(const int val){
     swaps(val);
     resize(size-1);

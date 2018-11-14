@@ -2,7 +2,8 @@
 
 Triangulo::Triangulo(int xh,int yh) :Polygon(xh,yh){}
 
-int Triangulo::area(void){
-    float resp=(ancho*alto)/val;
+
+int Triangulo::area(){
+    int resp=alto*ancho;
     return resp;
 }

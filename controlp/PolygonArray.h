@@ -1,9 +1,10 @@
 #ifndef POLYGONARRAY_H
 #define POLYGONARRAY_H
 #include "Polygon.h"
-#include "Rectangulo.h"
+#include "Rectangle.h"
+#include "Triangulo.h"
 
-class PolygonArray
+class PolygonArray:public Polygon
 {
     public:
         PolygonArray();
@@ -12,8 +13,6 @@ class PolygonArray
         ~PolygonArray();
 
          void print();
-         int getSize();
-         void clear();
          void push_back(const Polygon &p);
          void insertar(const Polygon &p,int val);
          void swaps(const int val);
