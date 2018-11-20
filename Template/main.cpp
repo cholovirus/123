@@ -6,9 +6,9 @@ using namespace std;
 
 int main()
 {
-    Point p<int>(1,3);
-    Point q<int>(2,4);
-    Point r<int>(6,7);
+    Point<int> p(1,3);
+    Point<int> q(2,4);
+    Point<int> r(6,7);
 
 
     /*Point arr[]={p,q,r};
