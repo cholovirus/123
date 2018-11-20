@@ -4,6 +4,14 @@
 
 using namespace std;
 
+/*PointArray<int> operator+(const PointArray<int> arr[]){
+    int temp[] ={(0,0)};
+
+    for(int i=0;i<6;i++){
+        temp.push_back(arr[i]);
+}// terminar para mañana*/
+
+
 int main()
 {
     Point<int> p(1,3);
