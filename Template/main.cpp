@@ -4,12 +4,15 @@
 
 using namespace std;
 
-/*PointArray<int> operator+(const PointArray<int> arr[]){
-    int temp[] ={(0,0)};
+PointArray<int> operator+( PointArray<int> arr, PointArray<int> arr2){
 
-    for(int i=0;i<6;i++){
-        temp.push_back(arr[i]);
-}// terminar para mañana*/
+    PointArray<int> temp =arr;
+    for(int i=0 ; i<arr2.getSize(); i++){
+        temp.push_back(arr(i));
+    }
+    return temp;
+}
+
 
 
 int main()
