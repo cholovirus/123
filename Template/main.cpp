@@ -12,7 +12,7 @@ PointArray<int> operator+( PointArray<int> arr, PointArray<int> arr2){
     }
     return temp;
 }
-
+// crear un point en point array, que regrese un point
 
 
 int main()
