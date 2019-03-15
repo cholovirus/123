@@ -28,7 +28,7 @@ int main()
     else
         cout<<"no es multiplo ☠"<<endl;*/
 
-//
+// suma, promedio, producto, mayor y menor
     cout<<a+b+c<<endl;
     cout<<(a+b+c)/3<<endl;
     cout<<a*b*c<<endl;
