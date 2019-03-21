@@ -45,7 +45,25 @@ int main()
     suma=+b+c+d+e+z;
 
     cout<<suma;
-
+    
+     /*forma que lo hizo el profe
+     
+     int val,a,b,c,d
+     cin>>val;
+     
+     a=val%10;
+     val=val/10;
+     
+     b=val%10;
+     val=val/10;
+     
+     c=val%10;
+     val=val/10;
+     
+     d=val%10;
+     val=val/10;
+     cout<<val+a+b+c+d<<end;   
+    */
 
 
     return 0;
