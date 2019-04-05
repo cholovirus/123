@@ -2,32 +2,30 @@
 
 using namespace std;
 
-int problem14(int var){
-    int cont=1;
+int problem14(long long var){
+    long long cont=1;
     for(int i=0;;i++){
 
         if(!(var%2)){
             var/=2;
         }else if(var%2==1){
-            var=3*var+1;
+            var=(3*var)+1;
 
         }  cont++;
-        if(var<=1){
-            return cont;
 
+        if (var==1){
+            return cont;
         }
     }
 }
 
 void bucle(){
-    int aux=0;
-    int con=0;
-    int aux2=0;
-    for(int i=0;i< 1000000;i++){
-       con= problem14(i);
-       //cout<<con<< " "<<i<<endl;
-        if(con >aux){
-            aux=con;
+    long long aux=0;
+    long long aux2=0;
+    for(int i=113382;i<1000000 ;i++){
+            
+        if(problem14(i)>aux){
+            aux=problem14(i);
             aux2=i;
         }
     }
@@ -37,6 +35,7 @@ void bucle(){
 
 int main()
 {
+    //cout<<problem14(837799);
 
     bucle();
     return 0;
