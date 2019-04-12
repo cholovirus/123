@@ -90,8 +90,8 @@ int main()
     problem3_2(1000);
     cout<<endl;
 
-    cout<<em1.getN()<<em1.getA()<<em1.getS()<<endl;
-    cout<<em2.getN()<<em2.getA()<<em2.getS()<<endl;
+    cout<<em1.getN()<<"--"<<em1.getA()<<"--"<<em1.getS()<<endl;
+    cout<<em2.getN()<<"--"<<em2.getA()<<"--"<<em2.getS()<<endl;
     em1.subirSueldo(10);
     cout<<em1.getS()<<endl;
 
