@@ -42,18 +42,41 @@ void problem3_2(int x){
 }
 
 
+///problem4
+class Empleado{
+private:
+    string nombre, apellido;
+    double salario;
+public:
+    //costructor
+    Empleado(string n, string a, double s):nombre(n),apellido(a){
+        if(s<0){salario=0;}
+        else{salario=s;}
+    }
+    //metodos
 
+    string getN(){return nombre;}
+    string getA(){return apellido;}
+    double getS(){return salario;}
+
+
+    void bajarSueldo(int s){
+
+        int x=(salario*s)/100;
+        salario=salario-x;
+    }
+
+
+};
 
 void problem5(long long x){
-
-    for(long long i=x;i>0;i--){
-      if(problem3_1(i)){
-        if(x%i==0){
-            cout<<i<<endl;
-            break;
+    int i;
+    for( i=2;1<x;i++){
+        while(!(x%i)){
+            x/=i;
         }
-      }
-}
+    }
+    cout<<i-1<<endl;
 }
 
 
@@ -64,8 +87,8 @@ int main()
     problem2(10);
     cout<<endl;
 
-    /*problem3_2(1000);
-    cout<<endl;*/
+    problem3_2(1000);
+    cout<<endl;
 
     problem5(13195);
 
