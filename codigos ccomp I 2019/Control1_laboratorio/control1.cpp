@@ -60,10 +60,10 @@ public:
     double getS(){return salario;}
 
 
-    void bajarSueldo(int s){
+    void subirSueldo(int s){
 
         int x=(salario*s)/100;
-        salario=salario-x;
+        salario=salario+x;
     }
 
 
@@ -92,7 +92,7 @@ int main()
 
     cout<<em1.getN()<<em1.getA()<<em1.getS()<<endl;
     cout<<em2.getN()<<em2.getA()<<em2.getS()<<endl;
-    em1.bajarSueldo(10);
+    em1.subirSueldo(10);
     cout<<em1.getS()<<endl;
 
     problem5(600851475143);
