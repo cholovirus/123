@@ -85,8 +85,8 @@ int main()
     ///problem4
     Empleado em1("pedro","alcantaro",3000);
     Empleado em2("Juan","ee",-500);
-    cout<<em1.getN()<<em1.getA()<<em1.getS()<<endl;
-    cout<<em2.getN()<<em2.getA()<<em2.getS()<<endl;
+    cout<<em1.getN()<<"--"<<em1.getA()<<"--"<<em1.getS()<<endl;
+    cout<<em2.getN()<<"--"<<em2.getA()<<"--"<<em2.getS()<<endl;
     em1.bajarSueldo(10);
     cout<<em1.getS()<<endl;
 
