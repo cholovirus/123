@@ -90,7 +90,12 @@ int main()
     problem3_2(1000);
     cout<<endl;
 
-    problem5(13195);
+    cout<<em1.getN()<<em1.getA()<<em1.getS()<<endl;
+    cout<<em2.getN()<<em2.getA()<<em2.getS()<<endl;
+    em1.bajarSueldo(10);
+    cout<<em1.getS()<<endl;
+
+    problem5(600851475143);
 
     return 0;
 }
