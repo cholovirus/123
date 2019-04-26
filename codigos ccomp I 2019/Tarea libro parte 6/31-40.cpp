@@ -23,13 +23,12 @@ int libro_32(int nota){
 }
 
 int libro_33_1(void){
-    srand(time(NULL));
-
     return rand()%2;
 }
 
 void libro_33_2(int repeticion){
     int cara=0,sella=0;
+    srand(time(NULL));
     for(int i=0;i<repeticion;i++){
         int aux=libro_33_1();
 
@@ -41,7 +40,54 @@ void libro_33_2(int repeticion){
     cout<<"cara: "<<cara<<" sella: "<<sella<<endl;
 }
 
+void libro_34(){
+    srand(time(NULL));
+    int aux=1+rand()%1000;
+    int numeroUsuario;
 
+    cout<<"Adivine el numero ¡¡"<<endl;
+    cout<<"Escriba un numero del 1 al 1000: "<<endl;
+    cin>>numeroUsuario;
+
+    if(numeroUsuario==aux){
+        cout<<"felicidades si es el numero"<<endl;
+        cout<<"quiere intentar otra vez s o n"<<endl;
+        char rejugar;
+        cin>>rejugar;
+        if (rejugar=='s'){libro_34();}
+        else{cout<<"gracias por jugar"<<endl;}
+    }else{
+        cout<<"intente otra vez"<<endl;
+        libro_34();}
+
+}
+
+int libro_36(int base, int exponente){
+    if(exponente==0){return 1;}
+    else{return base*libro_36(base,exponente-1);}
+
+}
+
+void libro_37(int x){
+    int a=0,b=1,aux=0;
+    if((x==1) || (x==0)){cout<<1<<endl;}
+    while(x--){
+        aux=a+b;
+        a=b;
+        b=aux;
+        cout<<aux<<endl;
+    }
+    //return aux;
+}
+
+
+int libro_40(int factorial){
+    if(factorial==1 || factorial==0){cout<<"factorial "<<factorial<<endl;return 1;}
+    else{
+        cout<<"factorial "<<factorial<<" *"<<endl;
+        return factorial*(libro_40(factorial-1));
+    }
+}
 int main()
 {
     cout<<libro_31(20,50);
@@ -54,7 +100,17 @@ int main()
     libro_33_2(100);
     cout<<endl;
 
+    //libro_34();
+    cout<<endl;
 
+    cout<<libro_36(3,0);
+    cout<<endl;
+
+    libro_37(10);
+    cout<<endl;
+
+    cout<<libro_40(4)<<endl;
+    cout<<endl;
 
 
     return 0;
