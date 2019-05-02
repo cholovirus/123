@@ -8,14 +8,16 @@ void cambio(int *ptr,int *ptr2){
         *ptr2=temp;
 }
 
-int suma_recursiva(int *arr,int len){
-    if(len==1){return *arr;}
+int suma_recursiva(int *arr,int len,int suma=0){
+
+    if(len<0){return suma;}
 
     else{
-        int *ptr=arr+len-1;
-        int *ptr2=arr+len-2;
-        *ptr2+=*ptr;
-        return suma_recursiva(arr,len-1);
+
+        int *ptr=arr+len;
+        suma+=*ptr;
+
+        return suma_recursiva(arr,len-1,suma);
 
     }
 }
@@ -32,7 +34,7 @@ public:
 
 
 Point imprimir_point(Point *arr,int len){
-    for(int i=0;i<len-1;i++,arr++){
+    for(int i=0;i<len;i++,arr++){
         cout<<"("<<arr->getX()<<","<<arr->getY()<<")"<<endl;
     }
 }
@@ -54,7 +56,7 @@ void invertir_recursiva(int *ptr, int len){
         *ptr=*ptr2;
         *ptr2=temp;
 
-        return invertir_recursiva(ptr+1,len-1);
+        return invertir_recursiva(ptr+1,len-2);
     }
 }
 void imprimir(int arr[],int len){
@@ -64,29 +66,35 @@ void imprimir(int arr[],int len){
 }
 int main()
 {
+    /// primer ejercicio
     int x=3; int y=5;
     int *ptr=&x; int *ptr2=&y;
     cambio(ptr,ptr2);
     cout<<x<<"  "<<y<<endl;
+    cout<<endl;
 
-    int arr[]={1,2,3,51};
-    cout<<suma_recursiva(arr,4);
+    ///segundo ejercicio
+    int arr[]={5,5,5,4,5};
+    cout<<suma_recursiva(arr,4)<<endl;
+    cout<<endl;
 
+    ///tercer ejercicio
     Point uno(2,4),dos(3,6),tres(4,5),cuatro(3,5);
     Point arre[]={uno,dos,tres,cuatro};
 
+    imprimir_point(arre,4);
+    cout<<endl;
 
 
-    cout<<"---"<<endl;
-
+    ///cuarto ejercicio
     int arr2[]={1,2,3,4};
     invertir_iterativa(arr2,4);
     imprimir(arr2,4);
     cout<<endl;
 
-    int arr3[]={1,2,3,4};
-    invertir_recursiva(arr3,4);
-    imprimir(arr3,4);
+    int arr3[]={1,2,3,4,5};
+    invertir_recursiva(arr3,5);
+    imprimir(arr3,5);
 
 
 
