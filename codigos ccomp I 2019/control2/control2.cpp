@@ -43,9 +43,7 @@ Point imprimir_point(Point *arr,int len){
 void invertir_iterativa(int *ptr, int len){
     int *ptr2=ptr+len-1;
     for(int i=0; i<len/2;i++,ptr++,ptr2--){
-        int temp=*ptr;
-        *ptr=*ptr2;
-        *ptr2=temp;
+        cambio(ptr,ptr2);
     }
 }
 
@@ -53,9 +51,10 @@ void invertir_recursiva(int *ptr, int len){
     if(len==1||len==0){return;}
     else{
         int*ptr2=ptr+len-1;
-        int temp=*ptr;
+        /*int temp=*ptr;
         *ptr=*ptr2;
-        *ptr2=temp;
+        *ptr2=temp;*/
+        cambio(ptr,ptr2);
 
         return invertir_recursiva(ptr+1,len-2);
     }
