@@ -34,9 +34,10 @@ public:
 
 
 Point imprimir_point(Point *arr,int len){
+    cout<<"[";
     for(int i=0;i<len;i++,arr++){
-        cout<<"("<<arr->getX()<<","<<arr->getY()<<")"<<endl;
-    }
+        cout<<"("<<arr->getX()<<","<<arr->getY()<<")"<<" ";
+    }cout<<"]";
 }
 
 void invertir_iterativa(int *ptr, int len){
