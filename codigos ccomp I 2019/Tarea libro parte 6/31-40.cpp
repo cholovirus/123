@@ -80,6 +80,10 @@ void libro_37(int x){
     //return aux;
 }
 
+void libro_38(int pieza,int torre1=1,int torre2=2,int torre3=3){
+    
+}
+
 
 int libro_40(int factorial){
     if(factorial==1 || factorial==0){cout<<"factorial "<<factorial<<endl;return 1;}
