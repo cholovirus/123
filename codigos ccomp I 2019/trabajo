@@ -24,7 +24,7 @@ class IntegerArray {
             }
         }
 
-        void insetar(int var){
+        void insertar(int var){
             this->size_+=1;
             this->data[size_-1]=var;
         }
@@ -32,16 +32,19 @@ class IntegerArray {
             this->size_-=1;
         }
 
-	
-	void insertar(int var, int posicion){
-		insertar(var);
-		for(int i=this->size_-i;posicion-1>i;i--){
+
+	void insertarP(int var, int posicion){
+	    int aux=this->size_;
+	    insertar(var);
+	    if(posicion==this->size_){return;}
+		for(int i=aux;;i--){
 			int temp=this->data[i];
-                	this->data[i]=this->data[i-1];
-                	this->data[i-	 1]=temp;
+            this->data[i]=this->data[i-1];
+            this->data[i-1]=temp;
+            if(i==posicion){break;}
 		}
 	}
-	
+
         void eliminarP(int posicion){
             int aux=posicion-1;
             if(posicion==this->size_){return;}
@@ -67,8 +70,8 @@ int main()
 {
     int arre[]={1,2,3,4};
     IntegerArray arr(arre,4);
-
-    arr.eliminarP(1);
+    arr.insertarP(50,5);
+    //arr.eliminarP(1);
     arr.printArray();
     return 0;
 }
