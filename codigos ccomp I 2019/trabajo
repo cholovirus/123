@@ -32,6 +32,16 @@ class IntegerArray {
             this->size_-=1;
         }
 
+	
+	void insertar(int var, int posicion){
+		insertar(var);
+		for(int i=this->size_-i;posicion-1>i;i--){
+			int temp=this->data[i];
+                	this->data[i]=this->data[i-1];
+                	this->data[i-	 1]=temp;
+		}
+	}
+	
         void eliminarP(int posicion){
             int aux=posicion-1;
             if(posicion==this->size_){return;}
