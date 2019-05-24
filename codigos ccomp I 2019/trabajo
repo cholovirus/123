@@ -10,6 +10,7 @@ class IntegerArray {
             this->size_ = 0;
 			this->data = new int[0];
         }
+
 		IntegerArray(int arr[], int size_){
 			this->size_ = size_;
 			this->data = new int[size_];
@@ -17,6 +18,7 @@ class IntegerArray {
 				this->data[i] = arr[i];
 			}
 		}
+
         void printArray(){
             for(int i=0;i<getSize();i++){
                 cout<<this->data[i]<<endl;
@@ -24,36 +26,43 @@ class IntegerArray {
             }
         }
 
+        void reSize(int size_){
+            int *temp= new int[size_];
+            int minsize=(size_>this->size_)?this->size_:size_;
+            for(int i=0;i<minsize;i++){
+                temp[i]=this->data[i];
+            }
+            this->size_=size_;
+            delete[] data;
+            this->data=temp;
+        }
+
         void insertar(int var){
-            this->size_+=1;
+            reSize(getSize()+1);
             this->data[size_-1]=var;
         }
+
         void eliminar(){
-            this->size_-=1;
+            reSize(getSize()-1);
+
         }
 
 
-	void insertarP(int var, int posicion){
-	    int aux=this->size_;
-	    insertar(var);
-	    if(posicion==this->size_){return;}
-		for(int i=aux;;i--){
-			int temp=this->data[i];
-            this->data[i]=this->data[i-1];
-            this->data[i-1]=temp;
-            if(i==posicion){break;}
-		}
-	}
+        void insertarPosicion(int var, int posicion){
+	    	insertar(var);
+   	    	for(int i=getSize()-1;i>=posicion;i--){
+                int temp=this->data[i];
+                this->data[i]=this->data[i-1];
+                this->data[i-1]=temp;
+                }
+            }
 
         void eliminarP(int posicion){
-            int aux=posicion-1;
-            if(posicion==this->size_){return;}
-            for(int i=aux;;i++){
-
+            for(int i=posicion-1;i<this->size_;i++){
                 int temp=this->data[i];
                 this->data[i]=this->data[i+1];
                 this->data[i+1]=temp;
-                if(i==this->size_-2){break;}
+
             } eliminar();
 
         }
@@ -70,8 +79,29 @@ int main()
 {
     int arre[]={1,2,3,4};
     IntegerArray arr(arre,4);
-    arr.insertarP(50,5);
-    //arr.eliminarP(1);
+
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.insertarPosicion(43,1);
+    arr.eliminarP(1);
+    arr.eliminarP(1);
+    arr.eliminarP(1);
+    arr.eliminarP(1);
+    arr.eliminarP(1);
+    arr.eliminarP(1);
+
+    arr.eliminarP(1);
+
+
+
+
+
     arr.printArray();
     return 0;
 }
