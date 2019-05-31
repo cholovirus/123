@@ -2,15 +2,15 @@
 
 using namespace std;
 
-class Polygon: {
+class Polygon {
  protected:
     int width, height;
  public:
      Polygon (int a=0, int b=0) : width(a), height(b) {}
-     //virtual int area ()=0;
-     int area(){}
+     virtual int area ()=0;
+     //int area(){}
      void printarea(){
-     cout << this->area() << endl;
+     	cout << this->area() << endl;
     }
     int getW(){return width;}
     int getH(){return height;}
@@ -24,7 +24,7 @@ class Rectangle:public Polygon{
 public:
     Rectangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height;}
-    void printarea(){cout << this->area() << endl;}
+    //void printarea(){cout << this->area() << endl;}
 
 
 };
@@ -33,11 +33,11 @@ class Triangle:public Polygon{
 public:
     Triangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height/2;}
-    void printarea(){cout << this->area() << endl;}
+    //void printarea(){cout << this->area() << endl;}
 
 
 };
-
+/*
 class PolygonArray {
 		Polygon *data;
         int size_;
@@ -113,7 +113,7 @@ class PolygonArray {
 		~PolygonArray(){
 			delete[] this->data;
 		}
-};
+};*/
 
 int main()
 {
@@ -122,12 +122,12 @@ int main()
     Triangle c(3,564);
     Rectangle d(9,5);
 
-    Polygon arr[]={a,b};
+    /*Polygon arr[]={a,b};
 
     PolygonArray ar(arr,2);
     ar.insertar(c);
     ar.insertarPosicion(d,2);
-    ar.eliminarP(3);
+    ar.eliminarP(3);*/
 
     //ar.printArray();
     int tam=2;
