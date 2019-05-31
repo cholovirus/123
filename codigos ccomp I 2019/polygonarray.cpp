@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Polygon {
+class Polygon: {
  protected:
     int width, height;
  public:
@@ -43,7 +43,7 @@ class PolygonArray {
         int size_;
 
         void eliminar(){
-            reSize(getSize()-1);
+            reSize(this->size_-1);
 
         }
 
@@ -123,12 +123,19 @@ int main()
     Rectangle d(9,5);
 
     Polygon arr[]={a,b};
+
     PolygonArray ar(arr,2);
     ar.insertar(c);
     ar.insertarPosicion(d,2);
     ar.eliminarP(3);
 
-    ar.printArray();
+    //ar.printArray();
+    int tam=2;
+    Polygon *arrre=new Polygon[tam];
+    arrre[0]=a;
+    arrre[1]=b;
+
+    delete[]arrre;
 
 
 
