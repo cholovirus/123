@@ -7,10 +7,10 @@ class Polygon {
     int width, height;
  public:
      Polygon (int a=0, int b=0) : width(a), height(b) {}
-     virtual int area ()=0;
-     //int area(){}
+     //virtual int area ()=0;
+     int area(){return 0;}
      void printarea(){
-     	cout << this->area() << endl;
+        cout << this->area() << endl;
     }
     int getW(){return width;}
     int getH(){return height;}
@@ -24,7 +24,7 @@ class Rectangle:public Polygon{
 public:
     Rectangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height;}
-    //void printarea(){cout << this->area() << endl;}
+    void printarea(){cout << this->area() << endl;}
 
 
 };
@@ -33,11 +33,11 @@ class Triangle:public Polygon{
 public:
     Triangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height/2;}
-    //void printarea(){cout << this->area() << endl;}
+    void printarea(){cout << this->area() << endl;}
 
 
 };
-/*
+
 class PolygonArray {
 		Polygon *data;
         int size_;
@@ -45,8 +45,8 @@ class PolygonArray {
         void eliminar(){
             reSize(this->size_-1);
 
-        }
 
+        }
         void reSize(int size_){
             Polygon *temp= new Polygon[size_];
             int minsize=(size_>this->size_)?this->size_:size_;
@@ -98,7 +98,7 @@ class PolygonArray {
             }
 
         void eliminarP(int posicion){
-            for(int i=posicion-1;i<this->size_;i++){
+            for(int i=posicion;i<this->size_;i++){
                 Polygon temp=this->data[i];
                 this->data[i]=this->data[i+1];
                 this->data[i+1]=temp;
@@ -113,14 +113,13 @@ class PolygonArray {
 		~PolygonArray(){
 			delete[] this->data;
 		}
-};*/
+};
 
 void prinar(Polygon arr[],int size_){
     for(int i=0;i<size_;i++){
         arr[i].printarea();
     }
 }
-
 int main()
 {
     Rectangle a(4,5);
@@ -128,22 +127,24 @@ int main()
     Triangle c(3,564);
     Rectangle d(9,5);
 
-    /*Polygon arr[]={a,b};
+    Polygon arr[]={a,b};
 
     PolygonArray ar(arr,2);
     ar.insertar(c);
+    ar.insertar(c);ar.insertar(c);ar.insertar(c);ar.insertar(c);ar.insertar(c);ar.insertar(c);
     ar.insertarPosicion(d,2);
-    ar.eliminarP(3);*/
-
-    //ar.printArray();
-    int tam=2;
+    ar.eliminarP(3);
+    ar.eliminarP(3);ar.eliminarP(3); ar.eliminarP(3);ar.eliminarP(3); ar.eliminarP(3);ar.eliminarP(3); ar.eliminarP(3);ar.eliminarP(3);ar.eliminarP(3);
+    ar.printArray();
+    int tam=2;///se tiene que usar cin, (esto es un prueba
     Polygon *arrre=new Polygon[tam];
     arrre[0]=a;
     arrre[1]=b;
 
+
     delete[]arrre;
 
-
+    prinar(arr,2);
 
     return 0;
 }
