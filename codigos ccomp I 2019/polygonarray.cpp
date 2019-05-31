@@ -24,8 +24,7 @@ class Rectangle:public Polygon{
 public:
     Rectangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height;}
-    void printarea(){cout << this->area() << endl;}
-
+    
 
 };
 
@@ -33,7 +32,7 @@ class Triangle:public Polygon{
 public:
     Triangle(int a=0,int b=0):Polygon(a,b){}
     int area(){return width*height/2;}
-    void printarea(){cout << this->area() << endl;}
+    
 
 
 };
