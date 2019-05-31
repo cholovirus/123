@@ -115,6 +115,12 @@ class PolygonArray {
 		}
 };*/
 
+void prinar(Polygon arr[],int size_){
+    for(int i=0;i<size_;i++){
+        arr[i].printarea();
+    }
+}
+
 int main()
 {
     Rectangle a(4,5);
