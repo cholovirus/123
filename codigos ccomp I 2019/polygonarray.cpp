@@ -140,7 +140,8 @@ int main()
     arrre[0]=a;
     arrre[1]=b;
 
-
+	//investigar classes amigas, polimorfismo(cplusplus)
+	//leer polimorfismo del libro
     delete[]arrre;
 
     prinar(arr,2);
