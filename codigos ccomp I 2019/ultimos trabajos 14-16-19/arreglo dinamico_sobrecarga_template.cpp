@@ -72,13 +72,13 @@ public:
     ~DinamicArray<T>() {
         delete[] data;
     }
-    T getdata(int i){return data[i];}
+    T posicionValor(int i){return data[i];}
 
 };
 template <typename A>
 void operator+(DinamicArray<A> &data, DinamicArray<A> &arr){
         for(int i=0;i<arr.getSize();i++){
-            data.push_back(arr.getdata(i));
+            data.push_back(arr.posicionValor(i));
         }
     }
 
