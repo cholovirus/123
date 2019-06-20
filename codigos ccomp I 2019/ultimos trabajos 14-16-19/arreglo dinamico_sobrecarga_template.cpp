@@ -72,7 +72,10 @@ public:
     ~DinamicArray<T>() {
         delete[] data;
     }
-    T posicionValor(int i){return data[i];}
+    T posicionValor(int i){
+        T temp=data[i];
+        return temp;}
+
 
 };
 template <typename A>
@@ -99,7 +102,9 @@ int main() {
     DinamicArray<double> a(arr,5);
     DinamicArray<double> b(arre,2);
     a+b;
+
+
     a.print();
 
-}
 
+}
