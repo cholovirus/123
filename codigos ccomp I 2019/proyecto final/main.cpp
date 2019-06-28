@@ -40,7 +40,7 @@ public:
         this->balabmp=load_bitmap("recursos/disparo.bmp",NULL);
         this->Ba1=create_bitmap(32,65);
     }
-    void drawBala(int px_,int py_,int avanzar){
+    void drawBala(int px_,int py_){
         blit(balabmp,Ba1,0,10,0,0,32,65);
         draw_sprite(buffer,this->Ba1,px_,py_);
 
@@ -48,13 +48,30 @@ public:
     //virtual void tipoBala()=0;
 };
 
+class Bala1:public Bala{
+public:
+    Bala1(int x_=0,int y_=0 ):Bala(x_,y_){
+        this->balabmp=load_bitmap("recursos/disparo.bmp",NULL);
+        this->Ba1=create_bitmap(32,87);
+    }
+
+    void drawBala(int px_,int py_){
+        blit(balabmp,Ba1,164,0,0,0,32,87);
+        draw_sprite(buffer,this->Ba1,px_,py_);
+    }
+
+
+};
+
+
 class Character{
 private:
     BITMAP *P1bmp;
     BITMAP *P1;
     int px,py;
     int direccion=0;
-    Bala a;
+    Bala a; Bala1 b;
+
 public:
     Character(int px=0, int py=0){
         this->px=px;   this->py=py;
@@ -75,8 +92,9 @@ public:
 
     }
     void disparo(){
-        int j=px+10;
-        if(key[KEY_A]){a.drawBala(j++,this->py,NULL);}
+
+        if(key[KEY_A]){a.drawBala(this->px,this->py);}
+        if(key[KEY_B]){b.drawBala(this->px,this->py);}
     }
     void drawChar(){
 
@@ -114,16 +132,10 @@ public:
 };
 
 
-///patron estrategia con disparos
 
 
-class Bala1:public Bala{
-public:
 
-    void tipoBala(){
 
-    }
-};
 class Bala2:public Bala{
 public:
 
@@ -131,6 +143,15 @@ public:
     }
 };
 
+class DrawObjeto{
+Bala a;
+Bala1 b;
+
+public:
+    void drob(){
+
+    }
+};
 
 int main()
 {
