@@ -6,13 +6,13 @@ class DinamicArray {
     T *data;
     int size;
     void resize(int newSize) {
-        T *arr = new T[size];
-        int minSize = (newSize > size ? newSize : newSize);
+        T *arr = new T[newSize];
+        int minSize = (newSize > size ? size : newSize);
         for(int i = 0; i < minSize; i++){
             arr[i]=data[i];
         }
-        delete[] data;
         this->size = newSize;
+        delete[] data;
         data = arr;
     }
 
